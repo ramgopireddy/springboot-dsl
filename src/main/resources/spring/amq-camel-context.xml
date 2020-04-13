@@ -17,6 +17,9 @@
         <route id="generate-order-route" streamCache="true">
             <from id="route-timer" uri="timer:order?period=50&amp;repeatCount=5"/>
             <log id="route-log-order" message="Simple message published to AMQ"/>
+            <setBody id="route-setBody">
+                <simple>"Simple message published to AMQ"</simple>
+            </setBody>
             <to id="route-to-incoming-orders" uri="amq:incomingOrders"/>
         </route>
         <!--
