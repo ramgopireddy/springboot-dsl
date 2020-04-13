@@ -12,7 +12,7 @@
             Values can be changed using external environment variables (see application.properties for details).
         -->
 
-        <property name="brokerURL" value="${activemq.broker.url}"/>
+        <property name="brokerURL" value="tcp://ex-aao-hdls-svc:61616"/>
         <property name="userName" value="${activemq.broker.username:#{null}}"/>
         <property name="password" value="${activemq.broker.password:#{null}}"/>
     </bean>
