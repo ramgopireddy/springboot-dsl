@@ -2,6 +2,8 @@
 .settings
 .classpath
 .project
+.vscode
+.settings
 *.jks
 *.ts
 *.crt
