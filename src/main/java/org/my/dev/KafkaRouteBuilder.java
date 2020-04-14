@@ -10,7 +10,6 @@ public class KafkaRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
 
         from("amq:incomingOrders")
-        .setBody(constant("Message from amq"))          // Message to send
         .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
         .setHeader(KafkaConstants.TOPIC, constant("incomingOrderskafka")) // Key of the message
         .log("${body}")
