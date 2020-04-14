@@ -12,6 +12,7 @@ public class KafkaRouteBuilder extends RouteBuilder {
         from("amq:incomingOrders")
         .setBody(constant("Message from amq"))          // Message to send
         .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
+        .setHeader(KafkaConstants.TOPIC, constant("incomingOrderskafka")) // Key of the message
         .log("${body}")
         .to("kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092");
 
