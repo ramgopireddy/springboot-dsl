@@ -23,8 +23,8 @@ import org.springframework.context.annotation.ImportResource;
  * The Spring-boot main class.
  */
 @SpringBootApplication
-//@ImportResource({"classpath:spring/amq.xml", "classpath:spring/kafka.xml", "classpath:spring/amq-camel-context.xml", "classpath:spring/kafka-camel-context.xml"})
-@ImportResource({"classpath:spring/amq.xml", "classpath:spring/amq-camel-context.xml"})
+//@ImportResource({"classpath:spring/amq.xml", "classpath:spring/kafka.xml", "classpath:spring/Timer1.xml", "classpath:spring/kafka-camel-context.xml"})
+@ImportResource({"classpath:spring/amq.xml","classpath:spring/Timer2.xml"})
 public class Application {
 
     public static void main(String[] args) {
