@@ -9,9 +9,9 @@ public class KafkaRouteBuilder extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("amq:incomingOrders")
+        from("amq:incomingOrders?acknowledgementModeName=CLIENT_ACKNOWLEDGE")
         .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
-        .setHeader(KafkaConstants.TOPIC, constant("incomingOrderskafka")) // Key of the message
+        .setHeader(KafkaConstants.TOPIC, constant("incomingOrderskafka")) // Topic Name
         .log("${body}")
         .to("kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092");
 
