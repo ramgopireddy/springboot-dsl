@@ -13,7 +13,7 @@ public class KafkaRouteBuilder extends RouteBuilder {
         .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
         .setHeader(KafkaConstants.TOPIC, constant("incomingOrderskafka")) // Topic Name
         .log("${body}")
-        .to("kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092&requestRequiredAcks=all");
+        .to("kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092&requestRequiredAcks=all&synchronous=true");
 
     }
 }
