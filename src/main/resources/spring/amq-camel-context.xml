@@ -14,7 +14,7 @@
           The amq component ensures to use the broker in the kubernetes cluster.
         -->
     <route id="generate-order-route" streamCache="true">
-      <from id="route-timer" uri="timer:order?period=50&amp;repeatCount=5000" />
+      <from id="route-timer" uri="timer:order?delay=5000"/>
       <loop>
         <constant>5000</constant>
         <log id="route-log-order" message="Simple message published to AMQ" />
