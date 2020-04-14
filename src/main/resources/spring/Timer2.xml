@@ -4,7 +4,7 @@
     <route id="generate-order-route" streamCache="true">
       <from id="route-timer" uri="timer:order1?delay=5000&amp;repeatCount=1"/>
       <loop>
-        <constant>5000</constant>
+        <constant>15000</constant>
         <log id="route-log-order" message="Simple message publisher1 to AMQ ${property.CamelLoopIndex}" />
         <setBody id="route-setBody">
           <simple>"Simple message publisher1 to AMQ ${property.CamelLoopIndex}"</simple>
@@ -16,7 +16,7 @@
     <route id="generate-order-route1" streamCache="true">
       <from id="route-timer1" uri="timer:order2?delay=5000&amp;repeatCount=1" />
       <loop>
-        <constant>5000</constant>
+        <constant>15000</constant>
         <log id="route-log-order1" message="Simple message publisher2 to AMQ ${property.CamelLoopIndex}" />
         <setBody id="route-setBody1">
           <simple>"Simple message publisher2 to AMQ ${property.CamelLoopIndex}"</simple>
