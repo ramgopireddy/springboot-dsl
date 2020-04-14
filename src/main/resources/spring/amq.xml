@@ -3,16 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <!-- Discovers the ActiveMQ service dynamically -->
     <bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-
-        <!--
-            The following properties can be customized in the application.properties file.
-            Values can be changed using external environment variables (see application.properties for details).
-        -->
-
-        <property name="brokerURL" value="tcp://example-hdls-svc:61616"/>
+        <property name="brokerURL" value="${activemq.broker.url}"/>
         <property name="userName" value="${activemq.broker.username:#{null}}"/>
         <property name="password" value="${activemq.broker.password:#{null}}"/>
     </bean>
