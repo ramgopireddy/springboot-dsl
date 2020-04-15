@@ -25,5 +25,9 @@
       </loop>
     </route>
 
+    <route>
+      <from uri="amq:incomingOrders"/>
+      <to uri="kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092"></to>
+    </route>
   </camelContext>
 </beans>
