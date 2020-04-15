@@ -27,6 +27,12 @@
 
     <route>
       <from uri="amq:incomingOrders"/>
+      <setHeader headerName="KafkaConstants.KEY">
+        <constant>Camel</constant>
+      </setHeader>
+      <setHeader headerName="KafkaConstants.TOPIC">
+        <constant>incomingOrderskafka</constant>
+      </setHeader>
       <to uri="kafka:incomingOrderskafka?brokers=fis-cluster-kafka-bootstrap:9092"></to>
     </route>
   </camelContext>
